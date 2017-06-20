@@ -1,16 +1,16 @@
 package note
 
-import com.user.GUser
+import com.user.User
 
 class Note {
 
     Integer id
     String text
-//  GUser user
+//  User user
 
 
 
-    static belongsTo = [user : GUser]
+    static belongsTo = [user : User]
 
     static constraints = {
         text maxSize: 20

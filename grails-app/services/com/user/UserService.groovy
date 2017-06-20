@@ -6,9 +6,9 @@ package com.user
  */
 class UserService {
 
-            GUser createService(Map map){
+            User createService(Map map){
 
-                GUser user = new GUser()
+                User user = new User()
                 user.firstName = map.firstName
                 user.lastName = map.lastName
                 user.email = map.email
@@ -27,12 +27,12 @@ class UserService {
 
         List listService(){
 
-                List users = GUser.list()
+                List users = User.list()
                 return users
         }
 
-        GUser updateService(Map map, Integer id){
-            GUser user = GUser.findById(id)
+        User updateService(Map map, Integer id){
+            User user = User.findById(id)
 
             user.properties = map
             if(user.hasErrors()){
@@ -45,12 +45,12 @@ class UserService {
         }
         void deleteService(Integer id){
 
-            GUser user = GUser.findById(id)
+            User user = User.findById(id)
             user.delete(flush: true)
         }
 
-        GUser getByIdService(Integer id){
-            GUser user = GUser.findById(id)
+        User getByIdService(Integer id){
+            User user = User.findById(id)
             return user
         }
 

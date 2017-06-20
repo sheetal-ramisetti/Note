@@ -12,7 +12,7 @@ class UserController {
      MessageSource messageSource
      def create() {
         Map map = request.JSON
-        GUser user = userService.createService(map)
+        User user = userService.createService(map)
         if (user.hasErrors()) {
             List errors = []
             user.errors.allErrors.each
@@ -33,7 +33,7 @@ class UserController {
     def update() {
         Map map = request.JSON
         Integer id = params.int('userId')
-        GUser user = userService.updateService(map, id)
+        User user = userService.updateService(map, id)
         if(user.hasErrors()){
             List errors = []
             user.errors.allErrors.each {error->
@@ -56,7 +56,7 @@ class UserController {
 
     def getById(){
         Integer id = params.int('userId')
-        GUser user = userService.getByIdService(id)
+        User user = userService.getByIdService(id)
         render user as JSON
     }
 

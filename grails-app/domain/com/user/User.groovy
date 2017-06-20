@@ -6,7 +6,7 @@ import org.mysecurerest.User
 /**
  * Created by sramisetti on 6/9/2017.
  */
-class GUser extends User {
+class User extends org.mysecurerest.User {
 
 //        Integer id
         String firstName
